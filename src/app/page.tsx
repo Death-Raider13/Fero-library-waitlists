@@ -80,9 +80,9 @@ export default function WaitlistPage() {
 
       {/* Navigation */}
       <nav className="w-full px-6 py-6 md:px-12 flex justify-between items-center z-20">
-        <div className="flex items-center gap-2">
-           <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-              <GraduationCap className="text-white w-5 h-5" />
+        <div className="flex items-center gap-3">
+           <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(79,70,229,0.5)]">
+              <Image src="/logo.png" alt="FeroLibrary Logo" fill className="object-cover" />
            </div>
            <span className="text-xl font-bold tracking-tight text-white">Fero<span className="text-cyan-400">Library</span></span>
         </div>
