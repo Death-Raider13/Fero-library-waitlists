@@ -1,7 +1,4 @@
 import { NextResponse } from 'next/server'
-import { getAdminFirestore } from '@/lib/firebase/admin-simple'
-import { sendWaitlistEmail } from '@/lib/email/send-email'
-import { FieldValue } from 'firebase-admin/firestore'
 
 export async function POST(request: Request) {
   let dbError: string | null = null
@@ -19,6 +16,9 @@ export async function POST(request: Request) {
 
     // 1) Write to Firestore
     try {
+      const { getAdminFirestore } = await import('@/lib/firebase/admin-simple')
+      const { FieldValue } = await import('firebase-admin/firestore')
+      
       const db = getAdminFirestore()
       if (db) {
         const waitlistRef = db.collection('waitlist')
@@ -39,6 +39,7 @@ export async function POST(request: Request) {
 
     // 2) Send Welcome Email
     try {
+      const { sendWaitlistEmail } = await import('@/lib/email/send-email')
       await sendWaitlistEmail(email, role)
       console.log(`Sent welcome email to: ${email}`)
     } catch (err: any) {
