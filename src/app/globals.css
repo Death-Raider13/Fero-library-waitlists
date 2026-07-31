@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #030014;
+  --color-background: #0b132b;
   --color-foreground: #ffffff;
   
-  --color-indigo-900: #1e1b4b;
-  --color-indigo-800: #3730a3;
+  --color-indigo-900: #1c2541;
+  --color-indigo-800: #3b5284;
   --color-indigo-600: #4f46e5;
   --color-indigo-500: #6366f1;
   --color-indigo-400: #818cf8;
   
-  --color-purple-900: #3b0764;
+  --color-purple-900: #2e1065;
   --color-purple-600: #9333ea;
   --color-purple-500: #a855f7;
   
@@ -30,18 +30,18 @@ body {
 
 /* Custom Glassmorphism Utilities */
 .glass {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(11, 19, 43, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(30, 27, 75, 0.4) 0%, rgba(59, 7, 100, 0.2) 100%);
+  background: linear-gradient(145deg, rgba(28, 37, 65, 0.6) 0%, rgba(11, 19, 43, 0.4) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Gradient text utility */
@@ -53,7 +53,7 @@ body {
 }
 
 .bg-gradient-mesh {
-  background-color: #030014;
+  background-color: #0b132b;
   background-image: 
     radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),

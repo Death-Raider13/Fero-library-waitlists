@@ -6,13 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
   BookOpen,
-  ShieldCheck,
+  TrendingUp,
+  Palette,
   ArrowRight,
   CheckCircle2,
   Users
 } from "lucide-react";
 
-type Role = "student" | "contributor" | "verifier" | null;
+type Role = "creator" | "affiliate" | "designer" | "customer" | null;
 
 interface RoleData {
   id: Role;
@@ -26,33 +27,43 @@ interface RoleData {
 
 const ROLES: RoleData[] = [
   {
-    id: "student",
-    title: "Student",
-    icon: <GraduationCap className="w-6 h-6 text-cyan-400" />,
-    description: "Access verified past questions, notes, and study guides.",
-    image: "/student.png",
-    benefits: ["Verified accuracy guarantee", "In-PDF Search & Interactive Previews", "Collaborative Q&A Study Groups"],
-    whatsappLink: "https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t"
-  },
-  {
-    id: "contributor",
-    title: "Educator / Creator",
+    id: "creator",
+    title: "Creator / Seller",
     icon: <BookOpen className="w-6 h-6 text-purple-400" />,
-    description: "Monetize your academic knowledge and help others succeed.",
+    description: "Write and sell summarized books or full courses, and pay token to promote them.",
     image: "/contributor.png",
-    benefits: ["Protect IP with our Secure PDF Viewer", "Earn up to 90% per sale", "Fast, reliable payouts"],
+    benefits: ["Sell digital books & summarized topics", "Boost search ranks by paying minor promo tokens", "Access professional cover designers directly"],
     whatsappLink: "https://chat.whatsapp.com/F5J8Ev3hNKCB8r0s46PknO?mode=hqctswa"
   },
   {
-    id: "verifier",
-    title: "Academic Verifier",
-    icon: <ShieldCheck className="w-6 h-6 text-indigo-400" />,
-    description: "Audit materials for your department and earn passive income.",
+    id: "affiliate",
+    title: "Affiliate Promoter",
+    icon: <TrendingUp className="w-6 h-6 text-emerald-400" />,
+    description: "Promote creator books and courses to earn high-margin commission splits.",
     image: "/verifier.png",
-    benefits: ["Earn a % on every sale of audited materials", "Build your academic reputation", "Exclusive community access"],
+    benefits: ["Promote e-books, summaries, and live classes", "Earn recurring commission on student registrations", "Real-time tracking of clicks, sales, and payouts"],
     whatsappLink: "https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t"
+  },
+  {
+    id: "designer",
+    title: "Book Cover Designer",
+    icon: <Palette className="w-6 h-6 text-pink-400" />,
+    description: "Offer freelance graphic design services for premium book covers to creators.",
+    image: "/contributor.png",
+    benefits: ["Showcase cover portfolio to all creators", "Charge custom rates starting from ₦500+", "Direct creator hiring pipeline & quick payouts"],
+    whatsappLink: "https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t"
+  },
+  {
+    id: "customer",
+    title: "Customer / Student",
+    icon: <GraduationCap className="w-6 h-6 text-cyan-400" />,
+    description: "Access summarized reading material and enroll in interactive live classes.",
+    image: "/student.png",
+    benefits: ["Browse books and simplified topic summaries", "Register for online live classes (Zoom & Google Meet)", "Refund protection for flagged materials"],
+    whatsappLink: "https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t"
   }
 ];
+
 
 export default function WaitlistPage() {
   const [selectedRole, setSelectedRole] = useState<Role>(null);
@@ -82,9 +93,9 @@ export default function WaitlistPage() {
       <nav className="w-full px-6 py-6 md:px-12 flex justify-between items-center z-20">
         <div className="flex items-center gap-3">
           <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-            <Image src="/logo.png" alt="FeroLibrary Logo" fill className="object-cover" />
+            <Image src="/logo.png" alt="Fero E-Library Logo" fill className="object-cover" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">Fero<span className="text-cyan-400">Library</span></span>
+          <span className="text-xl font-bold tracking-tight text-white">Fero<span className="text-cyan-400">E-Library</span></span>
         </div>
         <div>
           <button className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
@@ -107,16 +118,16 @@ export default function WaitlistPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              Private Beta Opening Soon
+              Beta Opening September 2026
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-              The Trust-First <br className="hidden md:block" />
-              <span className="text-gradient">Academic Marketplace</span>
+              The Ultimate Digital <br className="hidden md:block" />
+              <span className="text-gradient">E-Library Marketplace</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Verified past questions, study guides, and project templates. Guaranteed accuracy. Built by and for the academic community.
+              Summarized books, interactive live classes, and freelance cover design. Join the waitlist in your category to claim early access.
             </p>
           </motion.div>
         </div>
@@ -294,7 +305,7 @@ export default function WaitlistPage() {
                   <div className="relative w-full max-w-lg aspect-square">
                     <Image
                       src="/hero.png"
-                      alt="FeroLibrary Hero"
+                      alt="Fero E-Library Hero"
                       fill
                       className="object-contain drop-shadow-[0_0_50px_rgba(79,70,229,0.3)] animate-float"
                     />
@@ -309,7 +320,7 @@ export default function WaitlistPage() {
 
       {/* Footer */}
       <footer className="w-full py-8 text-center text-slate-600 border-t border-slate-800/50 mt-auto z-10 px-6">
-        <p className="text-xs">© {new Date().getFullYear()} FeroLibrary by CloudSpark Digital. All rights reserved.</p>
+        <p className="text-xs">© {new Date().getFullYear()} Fero E-Library by CloudSpark Digital. All rights reserved.</p>
         <div className="flex justify-center gap-4 mt-4 text-xs font-semibold">
           <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
