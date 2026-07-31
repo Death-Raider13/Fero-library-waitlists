@@ -56,8 +56,8 @@ export async function sendWaitlistEmail(to: string, role: keyof typeof ROLE_DETA
     port: Number(process.env.SMTP_PORT || 465),
     secure: process.env.SMTP_SECURE === 'true' || Number(process.env.SMTP_PORT || 465) === 465,
     auth: {
-      user: process.env.SMTP_USER || 'feromarkethub@gmail.com',
-      pass: process.env.SMTP_PASS || 'rmbyfktqutatmxci',
+      user: process.env.SMTP_USER || '',
+      pass: process.env.SMTP_PASS || '',
     },
   })
 
