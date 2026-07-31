@@ -70,12 +70,14 @@ export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !selectedRole) return;
 
     setIsSubmitting(true);
+    setError(null);
     try {
       const response = await fetch("/api/waitlist", {
         method: "POST",
@@ -88,14 +90,16 @@ export default function WaitlistPage() {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to join waitlist");
+        throw new Error(data.error || "Failed to join waitlist.");
       }
 
       setIsSuccess(true);
-    } catch (error) {
-      console.error("Error joining waitlist:", error);
-      alert("Something went wrong. Please try again.");
+    } catch (err: any) {
+      console.error("Error joining waitlist:", err);
+      setError(err.message || "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -210,6 +214,12 @@ export default function WaitlistPage() {
                         onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
+
+                    {error && (
+                      <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold leading-relaxed">
+                        {error}
+                      </div>
+                    )}
 
                     <button
                       type="submit"
