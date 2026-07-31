@@ -49,7 +49,7 @@ const ROLES: RoleData[] = [
     title: "Book Cover Designer",
     icon: <Palette className="w-6 h-6 text-pink-400" />,
     description: "Offer freelance graphic design services for premium book covers to creators.",
-    image: "/contributor.png",
+    image: "/designer.png",
     benefits: ["Showcase cover portfolio to all creators", "Charge custom rates starting from ₦500+", "Direct creator hiring pipeline & quick payouts"],
     whatsappLink: "https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t"
   },
@@ -71,16 +71,34 @@ export default function WaitlistPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !selectedRole) return;
 
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          role: selectedRole,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to join waitlist");
+      }
+
       setIsSuccess(true);
-    }, 1500);
+    } catch (error) {
+      console.error("Error joining waitlist:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
