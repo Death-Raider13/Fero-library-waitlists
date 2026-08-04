@@ -3,15 +3,16 @@ import nodemailer from 'nodemailer'
 const ROLE_DETAILS = {
   creator: {
     title: 'Creator / Seller',
+    link: 'https://chat.whatsapp.com/F5J8Ev3hNKCB8r0s46PknO?mode=hqctswa',
     intro: 'You can write and sell summarized books or full courses, and pay token to promote them.',
     benefits: [
       'Sell digital books & summarized topics',
-      'Boost search ranks by paying minor promo tokens',
-      'Access professional cover designers directly'
+      'Boost search ranks by paying minor promo tokens'
     ]
   },
   affiliate: {
     title: 'Affiliate Promoter',
+    link: 'https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t',
     intro: 'You can promote creator books and courses to earn high-margin commission splits.',
     benefits: [
       'Promote e-books, summaries, and live classes',
@@ -19,17 +20,9 @@ const ROLE_DETAILS = {
       'Real-time tracking of clicks, sales, and payouts'
     ]
   },
-  designer: {
-    title: 'Book Cover Designer',
-    intro: 'You can offer freelance graphic design services for premium book covers to creators.',
-    benefits: [
-      'Showcase cover portfolio to all creators',
-      'Charge custom rates starting from ₦500+',
-      'Direct creator hiring pipeline & quick payouts'
-    ]
-  },
   customer: {
     title: 'Customer / Student',
+    link: 'https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t',
     intro: 'You can access summarized reading material and enroll in interactive live classes.',
     benefits: [
       'Browse books and simplified topic summaries',
@@ -77,13 +70,10 @@ export async function sendWaitlistEmail(to: string, role: keyof typeof ROLE_DETA
         <ul style="color: #334155; padding-left: 20px; line-height: 1.6; font-size: 14px; margin-bottom: 24px;">
           ${roleInfo.benefits.map(b => `<li style="margin-bottom: 8px;">${b}</li>`).join('')}
         </ul>
-        <div style="text-align: center; margin-top: 24px; padding: 16px; background-color: #f1f5f9; border-radius: 8px;">
-          <p style="color: #475569; font-size: 14px; margin: 0; font-weight: bold;">
-            🚀 We are building something amazing behind the scenes!
-          </p>
-          <p style="color: #475569; font-size: 14px; margin: 8px 0 0 0;">
-            You will receive an exclusive email with a link to claim your account the moment we launch.
-          </p>
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="${roleInfo.link}" target="_blank" style="background-color: #25d366; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);">
+            Join Our WhatsApp Community Group
+          </a>
         </div>
       </div>
       

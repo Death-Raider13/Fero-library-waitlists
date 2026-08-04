@@ -13,7 +13,7 @@ import {
   Users
 } from "lucide-react";
 
-type Role = "creator" | "affiliate" | "designer" | "customer" | null;
+type Role = "creator" | "affiliate" | "customer" | null;
 
 interface RoleData {
   id: Role;
@@ -22,6 +22,7 @@ interface RoleData {
   description: string;
   image: string;
   benefits: string[];
+  whatsappLink: string;
 }
 
 const ROLES: RoleData[] = [
@@ -31,7 +32,8 @@ const ROLES: RoleData[] = [
     icon: <BookOpen className="w-6 h-6 text-purple-400" />,
     description: "Write and sell summarized books or full courses, and pay token to promote them.",
     image: "/contributor.png",
-    benefits: ["Sell digital books & summarized topics", "Boost search ranks by paying minor promo tokens", "Access professional cover designers directly"]
+    benefits: ["Sell digital books & summarized topics", "Boost search ranks by paying minor promo tokens"],
+    whatsappLink: "https://chat.whatsapp.com/F5J8Ev3hNKCB8r0s46PknO?mode=hqctswa"
   },
   {
     id: "affiliate",
@@ -39,15 +41,8 @@ const ROLES: RoleData[] = [
     icon: <TrendingUp className="w-6 h-6 text-emerald-400" />,
     description: "Promote creator books and courses to earn high-margin commission splits.",
     image: "/verifier.png",
-    benefits: ["Promote e-books, summaries, and live classes", "Earn recurring commission on student registrations", "Real-time tracking of clicks, sales, and payouts"]
-  },
-  {
-    id: "designer",
-    title: "Book Cover Designer",
-    icon: <Palette className="w-6 h-6 text-pink-400" />,
-    description: "Offer freelance graphic design services for premium book covers to creators.",
-    image: "/designer.png",
-    benefits: ["Showcase cover portfolio to all creators", "Charge custom rates starting from ₦500+", "Direct creator hiring pipeline & quick payouts"]
+    benefits: ["Promote e-books, summaries, and live classes", "Earn recurring commission on student registrations", "Real-time tracking of clicks, sales, and payouts"],
+    whatsappLink: "https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t"
   },
   {
     id: "customer",
@@ -55,7 +50,8 @@ const ROLES: RoleData[] = [
     icon: <GraduationCap className="w-6 h-6 text-cyan-400" />,
     description: "Access summarized reading material and enroll in interactive live classes.",
     image: "/student.png",
-    benefits: ["Browse books and simplified topic summaries", "Register for online live classes (Zoom & Google Meet)", "Refund protection for flagged materials"]
+    benefits: ["Browse books and simplified topic summaries", "Register for online live classes (Zoom & Google Meet)", "Refund protection for flagged materials"],
+    whatsappLink: "https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t"
   }
 ];
 
@@ -251,11 +247,19 @@ export default function WaitlistPage() {
 
                   <div className="w-full p-6 rounded-2xl bg-indigo-950/50 border border-indigo-500/30 mb-8">
                     <h3 className="font-bold text-indigo-300 flex items-center justify-center gap-2 mb-3">
-                      🚀 Coming Soon
+                      <Users className="w-4 h-4" /> Join Your Community
                     </h3>
-                    <p className="text-sm text-indigo-200/80 mb-0">
-                      We are building something amazing behind the scenes! You will receive an exclusive email with a link to claim your account the moment we launch.
+                    <p className="text-xs text-indigo-200/70 mb-4">
+                      Connect with other {selectedRole}s in our exclusive WhatsApp group.
                     </p>
+                    <a
+                      href={ROLES.find(r => r.id === selectedRole)?.whatsappLink || "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-[#25D366] hover:bg-[#20BE5C] text-white font-bold rounded-xl px-4 py-3 transition-colors shadow-lg shadow-[#25D366]/20"
+                    >
+                      Join WhatsApp Group <ArrowRight className="w-4 h-4 ml-2" />
+                    </a>
                   </div>
 
                   <button
