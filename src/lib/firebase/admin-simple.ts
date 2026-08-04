@@ -1,9 +1,7 @@
 import { initializeApp, getApps, cert } from 'firebase-admin/app'
 import { getFirestore } from 'firebase-admin/firestore'
-import { getAuth, type Auth } from 'firebase-admin/auth'
 
 let adminDb: any = null
-let adminAuth: Auth | null = null
 
 export function getAdminFirestore() {
   if (adminDb) {
@@ -45,30 +43,4 @@ export function getAdminFirestore() {
 
 export function isAdminAvailable(): boolean {
   return getAdminFirestore() !== null
-}
-
-export function getAdminAuth(): Auth | null {
-  if (adminAuth) {
-    return adminAuth
-  }
-
-  try {
-    const existingApps = getApps()
-    if (existingApps.length > 0) {
-      adminAuth = getAuth(existingApps[0])
-      return adminAuth
-    }
-
-    getAdminFirestore()
-    const apps = getApps()
-    if (apps.length > 0) {
-      adminAuth = getAuth(apps[0])
-      return adminAuth
-    }
-
-    return null
-  } catch (error: any) {
-    console.error('Failed to get Admin Auth:', error.message)
-    return null
-  }
 }
