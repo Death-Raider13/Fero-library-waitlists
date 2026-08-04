@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 const ROLE_DETAILS = {
   creator: {
     title: 'Creator / Seller',
-    link: 'https://chat.whatsapp.com/F5J8Ev3hNKCB8r0s46PknO?mode=hqctswa',
+    link: 'https://chat.whatsapp.com/B7GDt0F128JIyudMPveYA3?mode=hqctswa',
     intro: 'You can write and sell summarized books or full courses, and pay token to promote them.',
     benefits: [
       'Sell digital books & summarized topics',
@@ -12,7 +12,7 @@ const ROLE_DETAILS = {
   },
   affiliate: {
     title: 'Affiliate Promoter',
-    link: 'https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t',
+    link: 'https://chat.whatsapp.com/H15NqzspEi9Ew9lsqioRH1?smode=gi_t',
     intro: 'You can promote creator books and courses to earn high-margin commission splits.',
     benefits: [
       'Promote e-books, summaries, and live classes',
@@ -22,7 +22,7 @@ const ROLE_DETAILS = {
   },
   customer: {
     title: 'Customer / Student',
-    link: 'https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t',
+    link: 'https://chat.whatsapp.com/DhrQ4bkQFpX6SF6MyepgTg?mode=gi_t',
     intro: 'You can access summarized reading material and enroll in interactive live classes.',
     benefits: [
       'Browse books and simplified topic summaries',

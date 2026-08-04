@@ -33,7 +33,7 @@ const ROLES: RoleData[] = [
     description: "Write and sell summarized books or full courses, and pay token to promote them.",
     image: "/contributor.png",
     benefits: ["Sell digital books & summarized topics", "Boost search ranks by paying minor promo tokens"],
-    whatsappLink: "https://chat.whatsapp.com/F5J8Ev3hNKCB8r0s46PknO?mode=hqctswa"
+    whatsappLink: "https://chat.whatsapp.com/B7GDt0F128JIyudMPveYA3?mode=hqctswa"
   },
   {
     id: "affiliate",
@@ -42,7 +42,7 @@ const ROLES: RoleData[] = [
     description: "Promote creator books and courses to earn high-margin commission splits.",
     image: "/verifier.png",
     benefits: ["Promote e-books, summaries, and live classes", "Earn recurring commission on student registrations", "Real-time tracking of clicks, sales, and payouts"],
-    whatsappLink: "https://chat.whatsapp.com/Jxa7snbLjAbF5d7UxXF61U?mode=gi_t"
+    whatsappLink: "https://chat.whatsapp.com/H15NqzspEi9Ew9lsqioRH1?smode=gi_t"
   },
   {
     id: "customer",
@@ -51,7 +51,7 @@ const ROLES: RoleData[] = [
     description: "Access summarized reading material and enroll in interactive live classes.",
     image: "/student.png",
     benefits: ["Browse books and simplified topic summaries", "Register for online live classes (Zoom & Google Meet)", "Refund protection for flagged materials"],
-    whatsappLink: "https://chat.whatsapp.com/K0sgrx7oCId03e0jzoSuOh?mode=gi_t"
+    whatsappLink: "https://chat.whatsapp.com/DhrQ4bkQFpX6SF6MyepgTg?mode=gi_t"
   }
 ];
 
