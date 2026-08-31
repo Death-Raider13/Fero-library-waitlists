@@ -106,7 +106,7 @@ export default function WaitlistPage() {
       <nav className="w-full px-6 py-6 md:px-12 flex justify-between items-center z-20">
         <div className="flex items-center gap-3">
           <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-            <Image src="/logo.png" alt="Fero E-Library Logo" fill className="object-cover" />
+            <Image src="/logo.jpg" alt="Fero E-Library Logo" fill className="object-cover" />
           </div>
           <span className="text-xl font-bold tracking-tight text-white">Fero<span className="text-cyan-400">E-Library</span></span>
         </div>
@@ -171,8 +171,8 @@ export default function WaitlistPage() {
                         <div
                           key={role.id}
                           className={`relative p-4 rounded-2xl border-2 transition-all cursor-pointer overflow-hidden ${selectedRole === role.id
-                              ? 'border-indigo-500 bg-indigo-500/10'
-                              : 'border-slate-800 bg-slate-900/40 hover:border-slate-700 hover:bg-slate-800/80'
+                            ? 'border-indigo-500 bg-indigo-500/10'
+                            : 'border-slate-800 bg-slate-900/40 hover:border-slate-700 hover:bg-slate-800/80'
                             }`}
                           onClick={() => setSelectedRole(role.id)}
                         >
